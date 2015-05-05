@@ -21,7 +21,7 @@ module CurlBuilder
       info { "Packing binaries for architectures '#{param(compiled_architectures.join(" "))}'..." }
 
       osx = setup(:osx_sdk_version) != "none" ? compiled_architectures.select { |arch| arch.match(/^x86_64/) } : []
-      ios = compiled_architectures - osx
+      ios = compiled_architectures
       arm = ios.select { |arch| arch.match(/^arm/) }
       arm64 = ios.select { |arch| arch.match(/^arm64/) }
  
